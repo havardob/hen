@@ -1,0 +1,35 @@
+<article class="pricing-table">
+    <h3 class="pricing-table-title">{{ item.title }}</h3>
+    <div class="pricing-table-price"> 
+        <span>fra</span>
+        <span>{{ item.price }}</span>
+    </div>
+    {% if item.link %}
+    <a href="{% if item.link.linkType == "isInternal" %}/{{ item.link.internalUrl.slug.current }}{% endif %}{% if item.link.linkType == "isExternal" %}{{ item.link.externalUrl }}{% endif %}" class="cta | full-width{{ " primary" if item.link.isPrimary }}">
+        {{ item.link.linkText }}
+    </a>
+    {% endif %}
+    <hr class="pricing-table-separator"/>
+    <div class="pricing-table-description"> 
+        {{ item.description }}
+    </div>
+    <hr class="pricing-table-separator"/>
+    <p class="pricing-table-features-text">{{ item.perks.topText }}</p> 
+    <ul class="pricing-table-features">
+        {% for item in item.perks.list %}
+            <li class="pricing-table-features-item">
+                <i aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="none" d="M0 0h24v24H0z"/>
+                        <path 
+                            fill="currentColor"
+                            d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-.997-6l7.07-7.071-1.414-1.414-5.656
+                                5.657-2.829-2.829-1.414 1.414L11.003 16z"/>
+                    </svg>
+                </i>
+                <span>{{ item }}</span>
+            </li> 
+        {% endfor %}
+    </ul>
+    <p class="pricing-table-features-text">{{ item.perks.bottomText }}</p>
+</article>

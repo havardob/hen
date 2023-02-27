@@ -1,0 +1,36 @@
+---
+layout: "base.njk"
+---
+
+<section class="text-block">
+    <div class="constraint">
+        <div class="sub-page">
+            <div class="sub-page-column"> 
+                <article class="entry">
+                    <h1 class="entry-title">{{ subpage.title }}</h1>
+                    <div class="entry-leading">
+                        {{ subpage.leading }}
+                    </div> 
+                    <div class="entry-body">
+                        {{ subpage.body | safe }}
+                    </div>
+                </article>
+            </div>
+            <div class="sub-page-column">
+                {% if subpage.aside %}
+                    {% for item in subpage.aside %} 
+                        {% if item._type == "iconCard" %}
+                            {% include "components/icon-card.njk" %}
+                        {% endif %}
+                        {% if item._type == "priceTable" %}
+                            {% include "components/price-table.njk" %}
+                        {% endif %}
+                        {% if item._type == "factBox" %}
+                            {% include "components/fact-box.njk" %} 
+                        {% endif %}
+                    {% endfor %}  
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>

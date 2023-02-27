@@ -1,0 +1,9 @@
+<div class="gallery-list-wrapper">
+    <ul class="gallery-list">
+        {% for item in section.sectionElements %}
+            <li class="gallery-list-item">
+                {% include "components/icon-card.njk" %}
+            </li>
+        {% endfor %}
+    </ul> 
+</div> 

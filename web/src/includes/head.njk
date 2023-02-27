@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>{{ siteSettings.metaTitle }}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="{{ siteSettings.metaAuthor }}">
+    <meta name="description" content="{{ siteSettings.metaDescription }}">
+    <meta name="keywords" content="{% for keyword in siteSettings.metaKeywords %}{{keyword}},{% endfor %}">
+    <meta property="og:title" content="{{ siteSettings.metaTitle }}">
+    <meta property="og:description" content="{{ siteSettings.metaDescription }}">
+    <meta property="og:image" content="/some-image.png">
+    <meta property="og:url" content="/this-page.html">
+    <meta property="og:site_name" content="{{ siteSettings.metaTitle }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image:alt" content="image description">
+    <link href="/assets/css/styles.css" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+</head> 
+
+<body>
+ 

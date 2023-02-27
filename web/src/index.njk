@@ -1,0 +1,29 @@
+--- 
+layout: 'base.njk'
+---
+
+<section class="section"> 
+    <div class="constraint">
+        <h2 class="section-title">{{ frontPage.pageTitle }}</h2>
+        <div class="section-content | rich-text"> 
+            {{ frontPage.pageContent | safe }} 
+        </div>
+        {% if frontPage.buttons %} 
+            <div class="cta-group">
+                {% for button in frontPage.buttons %}
+                    <a href="{% if button.linkType == "isInternal" %}/{{ button.internalUrl.slug.current }}{% endif %}{% if button.linkType == "isExternal" %}{{ button.externalUrl }}{% endif %}" class="cta{{ " | primary" if button.isPrimary }}">
+                        <span>{{ button.linkText }}</span> 
+                        {% if button.linkIcon %}
+                            {% include "icons/" + button.linkIcon + ".svg" ignore missing %}
+                        {% endif %}
+                    </a> 
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div> 
+</section>
+{% if frontPage.sections %}
+    {% for section in frontPage.sections %}
+        {% include "sections/section.njk" %}
+    {% endfor %}
+{% endif %}

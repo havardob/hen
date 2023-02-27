@@ -1,0 +1,7 @@
+<div class="pricing-tables">
+    {% for item in section.sectionElements %}
+        <div class="pricing-tables-item">
+            {% include "components/price-table.njk" %}
+        </div>
+    {% endfor %}
+</div>

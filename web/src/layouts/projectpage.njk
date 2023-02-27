@@ -1,0 +1,55 @@
+{% include "head.njk" %}
+<div class="l-constraint">
+    <header class="c-header">
+        <div class="c-header-logo">
+            Helt Enkle<br/>Nettsider
+        </div>
+        <div class="c-header-nav">
+            <a href="#">Dette er en helt enkel nettside</a>
+            <a href="#">Hvordan fungerer det?</a>
+            <a href="#">Bestill</a>
+            <button class="c-main-nav-toggle">Meny</button>
+        </div>
+    </header>
+</div>
+<main>
+    <div class="l-constraint">
+        <div class="l-grid c-page">
+            <h1 class="c-page-title">{{ projectpage.title }}</h1>
+            <div class="c-page-leading">
+                {{ projectpage.leading }}
+            </div>
+            <aside class="c-info">
+                <div class="c-info-columns">
+                    <div class="c-info-column">
+                        <strong>Hvem</strong>
+                        <span>Gjallarhorn Forlag</span>
+                    </div>
+                    <div class="c-info-column">
+                        <strong>Hva</strong>
+                        <span>Nettside for bok-promotering ifm. lansering</span>
+                    </div>
+                    <div class="c-info-column">
+                        <strong>Hvor</strong>
+                        <span>Askøy</span>
+                    </div>
+                </div>
+            </aside>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+                specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining
+                essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+                passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <img
+                src="https://doga.no/globalassets/kulturhuset.jpg?width=1000&height=1000&transform=downFit"
+                class="img-full-bleed"/>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+                specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining
+                essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+                passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+    </div>
+</main>
+<footer></footer>
+{% include "foot.njk" %}
