@@ -8,120 +8,43 @@ export default {
   title: "Forside",
   type: "document",
   icon: RiHome3Fill,
-  groups: [
-    { title: "Innhold", name: "groupContent", default: true },
-    { title: "Metadata", name: "groupMeta" },
-  ],
   fields: [
     {
       name: "title",
       initialValue: "Forside",
       hidden: true,
-      type: "string",
-      group: "groupContent",
+      type: "string"
     },
     {
-      title: "Overskrift",
-      name: "pageTitle",
-      type: "string",
-      group: "groupContent",
+      title: "Intro",
+      name: "intro",
+      type: "text",
+      rows: 6,
     },
     {
-      ...richText,
-      title: "Innhold",
-      group: "groupContent",
-      name: "pageContent",
-    },
-    { ...section.buttons, group: "groupContent" },
-    {
-      title: "Seksjoner",
-      name: "sections",
+      title: "Innganger",
+      name: "navigation",
       type: "array",
-      group: "groupContent",
       of: [
         {
-          title: "Pris-seksjon",
-          name: "pricingSection",
+          title: "Lenke",
+          name: "navigationItem",
           type: "object",
           fields: [
-            section.title,
-            section.content,
             {
-              title: "Elementer",
-              name: "sectionElements",
-              type: "array",
-              of: [
-                {
-                  title: "Pristabell",
-                  name: "priceTableRef",
-                  type: "reference",
-                  to: [{ type: "priceTable" }],
-                },
-              ],
+              title: "Tittel",
+              name: "title",
+              type: "string",
             },
-            section.buttons,
-            section.buttonsAlignmentCenter,
-            section.isNarrow,
-            section.darkTheme,
-          ],
-        },
-        {
-          title: "Fordeler-seksjon",
-          name: "perksSection",
-          type: "object",
-          fields: [
-            section.title,
-            section.content,
             {
-              title: "Elementer",
-              name: "sectionElements",
-              type: "array",
-              of: [
-                {
-                  title: "Ikon-kort",
-                  name: "iconCardRef",
-                  type: "reference",
-                  to: [{ type: "iconCard" }],
-                },
-              ],
-            },
-            section.buttons,
-            section.buttonsAlignmentCenter,
-            section.isNarrow,
-            section.darkTheme,
-          ],
-        },
-        {
-          title: "Prosjekt-seksjon",
-          name: "showcaseSection",
-          type: "object",
-          fields: [
-            section.title,
-            section.content,
-            {
-              title: "Elementer",
-              name: "sectionElements",
-              type: "array",
-              of: [
-                {
-                  title: "Prosjekter",
-                  name: "projectRef",
-                  type: "reference",
-                  to: [{ type: "project" }],
-                },
-              ],
-            },
-            section.buttons,
-            section.buttonsAlignmentCenter,
-            section.isNarrow,
-            section.darkTheme,
-          ],
-        },
-      ],
-    },
-    { ...metaTitle, group: "groupMeta" },
-    { ...metaDescription, group: "groupMeta" },
-    { ...metaImage, group: "groupMeta" },
-    { ...metaKeywords, group: "groupMeta" },
-  ],
+              title: "Beskrivelse",
+              name: "description",
+              type: "text",
+              rows: 2
+            }
+          ]
+        }
+      ]
+    }
+  ]
 };

@@ -2,28 +2,25 @@
 layout: 'base.njk'
 ---
 
-<section class="section"> 
+<section class="hero">
     <div class="constraint">
-        <h2 class="section-title">{{ frontPage.pageTitle }}</h2>
-        <div class="section-content | rich-text"> 
-            {{ frontPage.pageContent | safe }} 
-        </div>
-        {% if frontPage.buttons %} 
-            <div class="cta-group">
-                {% for button in frontPage.buttons %}
-                    <a href="{% if button.linkType == "isInternal" %}/{{ button.internalUrl.slug.current }}{% endif %}{% if button.linkType == "isExternal" %}{{ button.externalUrl }}{% endif %}" class="cta{{ " | primary" if button.isPrimary }}">
-                        <span>{{ button.linkText }}</span> 
-                        {% if button.linkIcon %}
-                            {% include "icons/" + button.linkIcon + ".svg" ignore missing %}
-                        {% endif %}
-                    </a> 
-                {% endfor %}
+        <div class="hero-inner">
+            <div class="hero-content | rich-text">
+                {{ frontPage.intro }}
             </div>
-        {% endif %}
-    </div> 
+            {% if frontPage.navigation %}
+                <nav class="hero-navigation">
+                    {% for item in frontPage.navigation %}
+                        <a href="#" class="hero-navigation-item">
+                            <span class="hero-navigation-item-title">{{ item.title }}</span>
+                            <span class="hero-navigation-item-description">{{ item.description }}</span>
+                            <span class="hero-navigation-item-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path fill="currentColor" d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"/> </svg>
+                            </span>
+                        </a>
+                    {% endfor %}
+                </nav>
+            {% endif %}
+        </div>
+    </div>
 </section>
-{% if frontPage.sections %}
-    {% for section in frontPage.sections %}
-        {% include "sections/section.njk" %}
-    {% endfor %}
-{% endif %}

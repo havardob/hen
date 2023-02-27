@@ -1,0 +1,50 @@
+.cta {
+    font-size: 1.125rem;
+    display: inline-flex;
+    align-items: center;
+    padding: .75em 1.25em;
+    column-gap: .5rem;
+    background-color: var(--c-mist);
+    color: var(--c-charcoal);
+    border-radius: .375rem;
+    font-weight: 500;
+    text-decoration: none;
+    
+    svg {
+        flex-shrink: 0;
+    }
+
+    &:hover { 
+        background-color: var(--c-stone);
+    }
+    
+    &.primary {
+        background-color: var(--c-indigo);
+        color: var(--c-white);
+        &:hover {
+            background-color: var(--c-indigo-dark);
+        }
+    }
+
+    &.secondary {
+        background-color: var(--c-mist);
+        color: var(--c-gravel);
+        &:hover {
+            background-color: var(--c-stone);
+        }
+    }
+
+    &.ghost {
+        background-color: var(--c-transparent);
+        color: var(--c-gravel);
+        &:hover {
+            background-color: var(--c-mist);
+        }
+    }
+
+    &.full-width {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+}

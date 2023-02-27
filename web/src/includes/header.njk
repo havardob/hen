@@ -1,9 +1,10 @@
 <header class="header" id="top">
-    <div class="constraint | wide">
+    <div class="constraint">
         <div class="header-inner">
             <div class="header-logo">  
                 <a href="/">
-                    <img src="{{ siteHeader.logo }}" alt=""> 
+                    Helt enkle<br/>
+                    nettsider
                 </a> 
             </div>
             <nav class="header-nav">
@@ -11,11 +12,7 @@
                 <ul>
                     {% for item in siteHeader.navigation %}
                     <li>
-                        <a
-                           href="{% if item.linkType == "isExternal" %}{{item.externalUrl}}{% else %}/{{item.internalUrl.slug.current}}{% endif %}"
-                           class="header-nav-item{% if item.isPrimary %} | primary{% endif %}">    
-                           {{ item.linkText }}
-                        </a> 
+                        <a href="#">{{ item.linkText }}</a> 
                     </li> 
                     {% endfor %}  
                 </ul> 
