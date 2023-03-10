@@ -3,7 +3,7 @@
 $max-content-width: 1280px;
 
 :root {
-  --font-primary: "Golos Text", "Hanken Grotesk", "IBM Plex Sans", "Mona Sans", sans-serif;
+  --font-primary: "IBM Plex Sans", "Mona Sans", sans-serif;
   --font-secondary: "Hubot Sans", "Fraunces", serif;
 
   --indigo-100: #e0e7ff;
@@ -111,7 +111,7 @@ b {
 // }
 
 .constraint {
-  width: 94%;
+  width: 90%;
   max-width: $max-content-width;
   margin-left: auto;
   margin-right: auto;
@@ -125,7 +125,7 @@ b {
   }
 }
 
-// * {
-//     outline: 2px solid hotpink;
-//     outline-offset: -2px;
-// }
+*:focus-visible {
+    outline: 3px solid;
+    outline-offset: 3px;
+}

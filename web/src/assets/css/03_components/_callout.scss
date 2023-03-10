@@ -6,7 +6,6 @@
     flex-direction: column;
     align-items: center;
     row-gap: 1rem;
-    border-radius: 8px;
     @include large-screen {
         padding: 3rem;
         flex-direction: row;
@@ -24,7 +23,7 @@
     text-align: center;
     @include large-screen {
         text-align: left;
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 }
 

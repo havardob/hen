@@ -1,7 +1,4 @@
-import { metaTitle, metaDescription, metaKeywords, metaImage } from "../_helpers/metaFields";
-import { section } from "../_helpers/sectionFields";
-import { RiHome3Fill } from "../../node_modules/react-icons/ri";
-import { richText } from "../_helpers/richTextFields";
+import { RiHome3Fill, RiLink } from "../../node_modules/react-icons/ri";
 
 export default {
   name: "frontPage",
@@ -26,10 +23,11 @@ export default {
       name: "navigation",
       type: "array",
       of: [
-        {
+        { 
           title: "Lenke",
           name: "navigationItem",
           type: "object",
+          icon: RiLink,
           fields: [
             {
               title: "Tittel",

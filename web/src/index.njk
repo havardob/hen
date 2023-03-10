@@ -6,7 +6,7 @@ layout: 'base.njk'
     <div class="constraint">
         <div class="hero-inner">
             <div class="hero-content | rich-text">
-                {{ frontPage.intro }}
+                {{ frontPage.intro | safe }}
             </div>
             {% if frontPage.navigation %}
                 <nav class="hero-navigation">
@@ -15,7 +15,8 @@ layout: 'base.njk'
                             <span class="hero-navigation-item-title">{{ item.title }}</span>
                             <span class="hero-navigation-item-description">{{ item.description }}</span>
                             <span class="hero-navigation-item-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path fill="currentColor" d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"/> </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path fill="currentColor" d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"/>
+                                </svg>
                             </span>
                         </a>
                     {% endfor %}
@@ -24,3 +25,353 @@ layout: 'base.njk'
         </div>
     </div>
 </section>
+<section class="showcase">
+    <div class="constraint">
+        <div class="showcase-content">
+            <h2 class="showcase-content-title">
+                Eksempler på nettsider
+            </h2>
+        </div>
+        <div class="showcase-gallery" id="slideshow">
+            <button class="showcase-button | prev">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path fill="currentColor" d="M7.828 11H20v2H7.828l5.364 5.364-1.414 1.414L4 12l7.778-7.778 1.414 1.414z"/>
+                </svg>
+            </button>
+            <article class="showcase-item">
+                <div class="showcase-item-image">
+                    <img src="https://assets-global.website-files.com/5e593fb060cf877cf875dd1f/63ee7638220ab93663b24a24_moya1.jpeg"/>
+                </div>
+                <div class="showcase-item-content">
+                    <a href="#" class="showcase-item-title">
+                        Diagnosy
+                    </a>
+                    <p class="showcase-item-description">
+                        Nettside for kiropraktor- og naprapat-tjenesten på Søndre Askøy
+                    </p>
+                </div>
+            </article>
+            <article class="showcase-item">
+                <div class="showcase-item-image">
+                    <img src="https://assets-global.website-files.com/5e593fb060cf877cf875dd1f/63e3bb83998a04178e2e030c_galery2.jpeg"/>
+                </div>
+                <div class="showcase-item-content">
+                    <a href="#" class="showcase-item-title">
+                        KH Grafisk
+                    </a>
+                    <p class="showcase-item-description">
+                        Portefølje for fotograf og grafisk designer Kristiane Hetlevik
+                    </p>
+                </div>
+            </article>
+            <article class="showcase-item">
+                <div class="showcase-item-image">
+                    <img src="https://assets-global.website-files.com/5e593fb060cf877cf875dd1f/63dc02f596073c60523ee64d_sun1.jpeg"/>
+                </div>
+                <div class="showcase-item-content">
+                    <a href="#" class="showcase-item-title">
+                        Rose Café
+                    </a>
+                    <p class="showcase-item-description">
+                        Online restaurantmeny med lett tilgjengelig kontaktinformasjon og bestillingsveiledning
+                    </p>
+                </div>
+            </article>
+            <button class="showcase-button | next">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path fill="currentColor" d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"/>
+                </svg>
+            </button>
+        </div>
+        <div class="showcase-footer">
+            <a href="#" class="cta">
+                <span>Alle eksempler</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path fill="currentColor" d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+<section class="pricing">
+    <div class="constraint">
+        <div class="price-categories">
+            <article class="price-category">
+                <header class="price-category-header">
+                    <h2 class="price-category-title">Helt enkel</h2>
+                    <div class="price-category-price">
+                        <span>fra</span>
+                        <span>10 000,-</span>
+                    </div>
+                    <p class="price-category-description">Nettside bestående av bare én side. Passer for bla. fotograf-porteføljer,
+                        restauranter, bok- eller albumpromoteringer.</p>
+                    <a href="#" class="cta | secondary full-width">Se eksempler av denne typen</a>
+                </header>
+                <div class="price-category-body">
+                    <p>Dette får du:</p>
+                    <ul>
+                        <li>
+                            <i aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                    <path fill="none" d="M0 0h24v24H0z"/>
+                                    <path
+                                        fill="currentColor"
+                                        d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-.997-6l7.07-7.071-1.414-1.414-5.656
+                                            5.657-2.829-2.829-1.414 1.414L11.003 16z"/>
+                                </svg>
+                            </i>
+                            <span>Mobiltilpasset design</span>
+                        </li>
+                        <li>
+                            <i aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                    <path fill="none" d="M0 0h24v24H0z"/>
+                                    <path
+                                        fill="currentColor"
+                                        d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-.997-6l7.07-7.071-1.414-1.414-5.656
+                                            5.657-2.829-2.829-1.414 1.414L11.003 16z"/>
+                                </svg>
+                            </i>
+                            <span>Intuitiv navigasjon</span>
+                        </li>
+                        <li>
+                            <i aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                    <path fill="none" d="M0 0h24v24H0z"/>
+                                    <path
+                                        fill="currentColor"
+                                        d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-.997-6l7.07-7.071-1.414-1.414-5.656
+                                            5.657-2.829-2.829-1.414 1.414L11.003 16z"/>
+                                </svg>
+                            </i>
+                            <span>Enkel redigering med Santiy CMS</span>
+                        </li>
+                        <li>
+                            <i aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                    <path fill="none" d="M0 0h24v24H0z"/>
+                                    <path
+                                        fill="currentColor"
+                                        d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-.997-6l7.07-7.071-1.414-1.414-5.656
+                                            5.657-2.829-2.829-1.414 1.414L11.003 16z"/>
+                                </svg>
+                            </i>
+                            <span>En forside</span>
+                        </li>
+                        <li>
+                            <i aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                    <path fill="none" d="M0 0h24v24H0z"/>
+                                    <path
+                                        fill="#CCC"
+                                        d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-.997-6l7.07-7.071-1.414-1.414-5.656
+                                            5.657-2.829-2.829-1.414 1.414L11.003 16z"/>
+                                </svg>
+                            </i>
+                            <span>
+                                <s>Flere undersider</s>
+                            </span>
+                        </li>
+                        <li>
+                            <i aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                    <path fill="none" d="M0 0h24v24H0z"/>
+                                    <path
+                                        fill="#CCC"
+                                        d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-.997-6l7.07-7.071-1.414-1.414-5.656
+                                            5.657-2.829-2.829-1.414 1.414L11.003 16z"/>
+                                </svg>
+                            </i>
+                            <span>
+                                <s>Oppsett av Google Search Console</s>
+                            </span>
+                        </li>
+                        <li>
+                            <i aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                    <path fill="none" d="M0 0h24v24H0z"/>
+                                    <path
+                                        fill="#CCC"
+                                        d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-.997-6l7.07-7.071-1.414-1.414-5.656
+                                            5.657-2.829-2.829-1.414 1.414L11.003 16z"/>
+                                </svg>
+                            </i>
+                            <span>
+                                <s>Oppsett av Google Business</s>
+                            </span>
+                        </li>
+                        <li>
+                            <i aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                    <path fill="none" d="M0 0h24v24H0z"/>
+                                    <path
+                                        fill="#CCC"
+                                        d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-.997-6l7.07-7.071-1.414-1.414-5.656
+                                            5.657-2.829-2.829-1.414 1.414L11.003 16z"/>
+                                </svg>
+                            </i>
+                            <span>
+                                <s>Oppsett av Microanalytics</s>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </article>
+            <article class="price-category">
+                <header class="price-category-header">
+                    <h2 class="price-category-title">Enkel</h2>
+                    <div class="price-category-price">
+                        <span>fra</span>
+                        <span>15 000,-</span>
+                    </div>
+                    <p class="price-category-description">Nettside med en forside og flere undersider. Passere for bla. entrepenør-firmaer,
+                        frisørsalonger, velværesentre eller
+                    </p>
+                    <a href="#" class="cta | primary full-width">Se eksempler av denne typen</a>
+                </header>
+                <div class="price-category-body">
+                    <p>Dette får du:</p>
+                    <ul>
+                        <li>
+                            <i aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                    <path fill="none" d="M0 0h24v24H0z"/>
+                                    <path
+                                        fill="currentColor"
+                                        d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-.997-6l7.07-7.071-1.414-1.414-5.656
+                                            5.657-2.829-2.829-1.414 1.414L11.003 16z"/>
+                                </svg>
+                            </i>
+                            <span>Mobiltilpasset design</span>
+                        </li>
+                        <li>
+                            <i aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                    <path fill="none" d="M0 0h24v24H0z"/>
+                                    <path
+                                        fill="currentColor"
+                                        d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-.997-6l7.07-7.071-1.414-1.414-5.656
+                                            5.657-2.829-2.829-1.414 1.414L11.003 16z"/>
+                                </svg>
+                            </i>
+                            <span>Intuitiv navigasjon</span>
+                        </li>
+                        <li>
+                            <i aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                    <path fill="none" d="M0 0h24v24H0z"/>
+                                    <path
+                                        fill="currentColor"
+                                        d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-.997-6l7.07-7.071-1.414-1.414-5.656
+                                            5.657-2.829-2.829-1.414 1.414L11.003 16z"/>
+                                </svg>
+                            </i>
+                            <span>Enkel redigering med Santiy CMS</span>
+                        </li>
+                        <li>
+                            <i aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                    <path fill="none" d="M0 0h24v24H0z"/>
+                                    <path
+                                        fill="currentColor"
+                                        d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-.997-6l7.07-7.071-1.414-1.414-5.656
+                                            5.657-2.829-2.829-1.414 1.414L11.003 16z"/>
+                                </svg>
+                            </i>
+                            <span>En forside</span>
+                        </li>
+                        <li>
+                            <i aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                    <path fill="none" d="M0 0h24v24H0z"/>
+                                    <path
+                                        fill="currentColor"
+                                        d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-.997-6l7.07-7.071-1.414-1.414-5.656
+                                            5.657-2.829-2.829-1.414 1.414L11.003 16z"/>
+                                </svg>
+                            </i>
+                            <span>Flere undersider</span>
+                        </li>
+                        <li>
+                            <i aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                    <path fill="none" d="M0 0h24v24H0z"/>
+                                    <path
+                                        fill="currentColor"
+                                        d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-.997-6l7.07-7.071-1.414-1.414-5.656
+                                            5.657-2.829-2.829-1.414 1.414L11.003 16z"/>
+                                </svg>
+                            </i>
+                            <span>Oppsett av Google Search Console</span>
+                        </li>
+                        <li>
+                            <i aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                    <path fill="none" d="M0 0h24v24H0z"/>
+                                    <path
+                                        fill="currentColor"
+                                        d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-.997-6l7.07-7.071-1.414-1.414-5.656
+                                            5.657-2.829-2.829-1.414 1.414L11.003 16z"/>
+                                </svg>
+                            </i>
+                            <span>Oppsett av Google Business</span>
+                        </li>
+                        <li>
+                            <i aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                    <path fill="none" d="M0 0h24v24H0z"/>
+                                    <path
+                                        fill="currentColor"
+                                        d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-.997-6l7.07-7.071-1.414-1.414-5.656
+                                            5.657-2.829-2.829-1.414 1.414L11.003 16z"/>
+                                </svg>
+                            </i>
+                            <span>Oppsett av Microanalytics</span>
+                        </li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+<script>
+    const slideshow = document.getElementById("slideshow");
+    const prevButton = slideshow.querySelector(".prev");
+    const nextButton = slideshow.querySelector(".next");
+    const slides = slideshow.querySelectorAll(".showcase-item");
+    let currentSlide = 0;
+    let lastSlide = slides.length - 1;
+    nextButton.addEventListener('click', function () {
+        currentSlide++;
+        slides.forEach((slide, index) => {
+            slide.style.transform = `translateX(calc(-${
+                100 * currentSlide
+            }% - ${
+                4 * currentSlide
+            }rem))`;
+        })
+        hideNavigation();
+    })
+    prevButton.addEventListener('click', function () {
+        currentSlide--;
+        slides.forEach((slide, index) => {
+            slide.style.transform = `translateX(calc(-${
+                100 * currentSlide
+            }% - ${
+                4 * currentSlide
+            }rem))`;
+        })
+        hideNavigation();
+    })
+    const hideNavigation = () => {
+        if (currentSlide === lastSlide) {
+            nextButton.style.display = "none";
+        } else {
+            nextButton.style.display = "flex";
+        }
+        if (currentSlide === 0) {
+            prevButton.style.display = "none";
+        } else {
+            prevButton.style.display = "flex";
+        }
+    } 
+    
+    hideNavigation();
+</script>
