@@ -1,0 +1,15 @@
+<div class="introduction">
+  {% if icon %}
+    <span class="introduction-icon">
+      {% include "atoms/icon" icon: icon %}
+    </span>
+  {% endif %}
+  <h2 class="introduction-title">
+    {{ title }}
+  </h2>
+  {% if text %}
+    <p class="introduction-text">
+      {{ text }}
+    </p>
+  {% endif %}
+</div>

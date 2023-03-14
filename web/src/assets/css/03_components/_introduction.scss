@@ -1,0 +1,47 @@
+.introduction {
+    max-width: 70ch;
+    @include medium-screen {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-inline: auto;
+    }
+}
+
+.introduction-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: 1px solid var(--c-divider);
+    
+    svg {
+        width: 2rem;
+    }
+
+    & + .introduction-title {
+        margin-top: 1.5rem;
+    }
+}
+
+.introduction-title {
+    font-size: var(--font-size-xl);
+    line-height: 1.25;
+    font-weight: 400;
+    color: var(--c-text-secondary);
+
+    & + .introduction-text {
+        margin-top: 1.25rem;
+    }
+}
+
+.introduction-text {
+    font-size: var(--font-size-m);
+}
+
+
+

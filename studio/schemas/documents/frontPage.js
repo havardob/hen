@@ -1,7 +1,4 @@
-import { metaTitle, metaDescription, metaKeywords, metaImage } from "../_helpers/metaFields";
-import { section } from "../_helpers/sectionFields";
-import { RiHome3Fill } from "../../node_modules/react-icons/ri";
-import { richText } from "../_helpers/richTextFields";
+import { RiHome3Fill, RiPageSeparator, RiListCheck2 } from "react-icons/ri";
 
 export default {
   name: "frontPage",
@@ -13,7 +10,12 @@ export default {
       name: "title",
       initialValue: "Forside",
       hidden: true,
-      type: "string"
+      type: "string",
+    },
+    {
+      title: "Tittel",
+      name: "subtitle",
+      type: "string",
     },
     {
       title: "Intro",
@@ -21,30 +23,116 @@ export default {
       type: "text",
       rows: 6,
     },
+    { type: "cardNavigation", name: "navigationObject", title: "Navigasjon" },
     {
-      title: "Innganger",
-      name: "navigation",
-      type: "array",
-      of: [
+      title: "Call to action",
+      name: "cta",
+      type: "object",
+      fields: [
         {
-          title: "Lenke",
-          name: "navigationItem",
+          title: "Link",
+          name: "link",
           type: "object",
           fields: [
             {
-              title: "Tittel",
-              name: "title",
+              title: "Intern eller ekstern lenke?",
+              name: "linkType",
               type: "string",
+              options: {
+                list: [
+                  { title: "Intern", value: "isInternal" },
+                  { title: "Ekstern", value: "isExternal" },
+                ],
+                layout: "radio",
+              },
+              initialValue: "isInternal",
             },
             {
-              title: "Beskrivelse",
-              name: "description",
-              type: "text",
-              rows: 2
-            }
-          ]
-        }
-      ]
-    }
-  ]
+              title: "URL til ekstern nettside",
+              name: "externalUrl",
+              type: "url",
+              hidden: ({ parent }) => parent?.linkType === "isInternal",
+            },
+            {
+              title: "Velg intern side",
+              name: "internalUrl",
+              type: "reference",
+              to: [{ type: "subPage" }],
+              hidden: ({ parent }) => parent?.linkType === "isExternal",
+            },
+          ],
+        },
+        { title: "Tittel", name: "title", type: "string" },
+        {
+          title: "Type",
+          name: "type",
+          type: "string",
+          options: {
+            list: [
+              { title: "Primær", value: "primary" },
+              { title: "Sekundær", value: "secondary" },
+            ],
+          },
+        },
+      ],
+    },
+    {
+      title: "Seksjoner",
+      type: "array",
+      name: "sections",
+      of: [
+        {
+          title: "Skillelinje",
+          name: "divider",
+          type: "object",
+          icon: RiPageSeparator,
+          preview: {
+            prepare: () => {
+              return {
+                title: "Skillelinje",
+                media: RiPageSeparator,
+              };
+            },
+          },
+          fields: [
+            {
+              title: "Skillelinje",
+              type: "string",
+              name: "divider",
+              initialValue: "----------------",
+              readOnly: true,
+            },
+          ],
+        },
+        {
+          title: "Seksjon med blokker",
+          name: "section",
+          type: "object",
+          icon: RiListCheck2,
+          preview: {
+            select: {
+              blocks: "blocks",
+            },
+            prepare: ({ blocks }) => {
+              return {
+                title: `${blocks.length} blokk${blocks.length > 1 ? "er" : ""}`,
+                media: RiListCheck2,
+              };
+            },
+          },
+          fields: [
+            {
+              title: "Blokker",
+              name: "blocks",
+              type: "array",
+              of: [
+                { type: "introduction", title: "Introduksjons-felt" },
+                { type: "cardNavigation", title: "Kortnavigasjon" },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+  ],
 };

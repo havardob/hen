@@ -12,6 +12,8 @@ import project from "./documents/project";
 import priceTable from "./documents/priceTable";
 import iconCard from "./documents/iconCard";
 import projectPage from "./documents/projectPage";
+import introduction from "./objects/introduction";
+import cardNavigation from "./objects/cardNavigation";
 
 export default [
   // OBJECTS
@@ -20,6 +22,8 @@ export default [
   accordionItem,
   iconPicker,
   richTextObject,
+  introduction,
+  cardNavigation,
   // DOCUMENTS
   frontPage,
   subPage,

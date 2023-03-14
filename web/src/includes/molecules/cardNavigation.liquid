@@ -1,0 +1,19 @@
+<div class="card-navigation-container">
+  <nav class="card-navigation">
+    {% for item in items %}
+      <a href="#" class="card-navigation-link">
+        <div class="card-navigation-link-inner">
+          {% if item.icon %}
+            <span class="card-navigation-link-icon" aria-hidden="true">
+              {% include "atoms/icon" icon: item.icon %}
+            </span>
+          {% endif %}
+          <span class="card-navigation-link-title">{{ item.title }}</span>
+          {% if item.description %}
+            <span class="card-navigation-link-description">{{ item.description }}</span>
+          {% endif %}
+        </div>
+      </a>
+    {% endfor %}
+  </nav>
+</div>

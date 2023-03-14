@@ -1,0 +1,17 @@
+<div class="hero">
+  <div class="hero-content">
+    <h2 class="hero-content-title">{{ title }}</h2>
+    <p class="hero-content-intro">{{ text }}</p>
+    {% if cta.title %}
+      {% if cta.link.linkType == "isInternal" %}
+        {% assign url = cta.link.internalUrl.slug.current %}
+      {% elsif cta.link.linkType == "isExternal" %}
+        {% assign url = cta.link.externalUrl %}
+      {% endif %}
+      {% include "atoms/buttonLink", text: cta.title type: cta.type url: url %}
+    {% endif %}
+  </div>
+  <div class="hero-navigation">
+    {% include 'molecules/cardNavigation' %}
+  </div>
+</div>

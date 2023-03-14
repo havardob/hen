@@ -18,9 +18,12 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets/js");
   eleventyConfig.addPassthroughCopy("src/assets/fonts");
 
+  eleventyConfig.setLiquidOptions({
+    dynamicPartials: true,
+    strict_filters: true,
+  });
+
   return {
-    htmlTemplateEngine: "njk",
-    dataTemplateEngine: "njk",
     dir: {
       input: "src",
       includes: "includes",

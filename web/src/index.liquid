@@ -1,0 +1,43 @@
+---
+layout: base
+---
+
+<main>
+  <h1 class="u-hidden">Forsiden</h1>
+  <section class="l-section l-section-hero">
+    <div class="l-constraint">
+      {% include "organisms/hero" 
+       title: frontPage.subtitle
+       text: frontPage.intro
+       items: frontPage.navigationObject.navigation
+       cta: frontPage.cta %}
+    </div>
+  </section>
+
+  <!-- Seksjoner -->
+  {% for section in frontPage.sections %}
+    {% if section._type == "divider" %}
+      <div class="l-constraint">
+        {% include "atoms/divider" %}
+      </div>
+    {% endif %}
+    {% if section._type == "section" %}
+      <section class="l-section">
+        <div class="l-constraint">
+          {% for block in section.blocks %}
+            {% if block._type == "introduction" %}
+              {% include "molecules/introduction" 
+               icon: block.icon
+               title: block.title
+               text: block.text %}
+            {% endif %}
+            {% if block._type == "cardNavigation" %}
+              {% include "molecules/cardNavigation" 
+               items: block.navigation %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      </section>
+    {% endif %}
+  {% endfor %}
+</main>

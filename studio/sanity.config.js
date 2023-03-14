@@ -1,5 +1,6 @@
 import { defineConfig } from "sanity";
 import { deskTool } from "sanity/desk";
+import { DefaultPreview } from "./custom-components/defaultPreview";
 import schemas from "./schemas/schema";
 import deskStructure from "./src/deskStructure";
 
@@ -19,6 +20,11 @@ export default defineConfig([
     schema: {
       types: schemas,
     },
+    form: {
+      components: {
+        preview: DefaultPreview,
+      },
+    },
   },
   {
     name: "test-workspace",
@@ -35,5 +41,10 @@ export default defineConfig([
     schema: {
       types: schemas,
     },
-  }]
-);
+    form: {
+      components: {
+        preview: DefaultPreview,
+      },
+    },
+  },
+]);
