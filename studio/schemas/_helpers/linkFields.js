@@ -61,3 +61,47 @@ export const link = {
     initialValue: false,
   },
 };
+
+export const linkPicker = {
+  title: "Lenke",
+  name: "link",
+  type: "object",
+  fields: [
+    {
+      title: "Intern side?",
+      description: "Skal denne lenken gå til en annen side på dette nettstedet?",
+      name: "isInternal",
+      type: "boolean",
+      initialValue: false,
+    },
+    {
+      title: "Ekstern side",
+      description:
+        "Legg inn URL'en til nettsiden du vil lenke til. Husk å ta med 'https://'. F.eks. 'https://vg.no'",
+      name: "externalUrl",
+      type: "url",
+      validation: (Rule) => Rule.uri({
+          scheme: ["http", "https", "mailto", "tel"],
+        }),
+      hidden: ({ parent }) => parent?.isInternal === true, 
+    }, 
+    {
+      title: "Intern side",
+      description: "Velg en av sidene du har opprettet her i Sanity fra nedtrekkslisten",
+      name: "internalUrl",
+      type: "reference",
+      to: [{ type: "subPage" }],
+      hidden: ({ parent }) => parent?.isInternal === false,
+      options: {
+        disableNew: true,
+      },
+    },
+    {
+      title: "Åpne i ny fane?",
+      description: "Bestem om lenken skal åpne seg i en ny fane når noen klikker på den", 
+      name: "newTab",
+      type: "boolean",
+      initialValue: false
+    }
+  ],
+};

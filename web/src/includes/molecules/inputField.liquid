@@ -1,0 +1,9 @@
+<div class="input-field">
+  <label for="{{ id }}" class="input-field-label">
+    {{ label }}
+  </label>
+  {% if description %}
+    <div class="input-field-description">{{ description }}</div>
+  {% endif %}
+  {% include 'atoms/input' %}
+</div>

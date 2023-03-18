@@ -1,0 +1,26 @@
+.contact-form {
+    border-radius: .375rem;
+    border: 1px solid var(--c-divider);
+    padding: 1.5rem;
+    background-color: var(--c-background-secondary);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    @include medium-screen {
+        gap: 2rem;
+        padding: 2rem;
+    }
+}
+
+.contact-form-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.5em;
+
+    p {
+        font-size: var(--font-size-xxs);
+        text-align: center;
+    }
+}

@@ -1,0 +1,28 @@
+.tab-filter {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    align-items: center;
+    justify-content: center;
+    padding: .75rem;
+    border-radius: .375rem;
+    background-color: var(--c-background-secondary);
+    border: 1px solid var(--c-divider);
+}
+
+.tab-filter-button {
+    border-radius: .25rem;
+    padding: .5em 1em;
+    background-color: var(--c-background-tertiary);
+    border: 0;
+    color: var(--c-text-secondary);
+    transition: opacity .15s ease;
+
+    &:not(.active):hover {
+        opacity: .8;
+    }
+
+    &.active {
+        background-image: linear-gradient(45deg, #387AFB, #2D66D7);
+    }
+}

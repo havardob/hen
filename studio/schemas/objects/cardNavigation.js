@@ -1,5 +1,7 @@
 import { RiLink, RiDashboardLine } from "react-icons/ri";
 import { iconPicker } from "../_helpers/iconFields";
+import { linkPicker } from "../_helpers/linkFields";
+
 
 export default {
   name: "cardNavigation",
@@ -15,7 +17,7 @@ export default {
       for (const item of list) {
         listOfLinks.push(item.title);
       }
-      return {
+      return { 
         title: "Kortnavigasjon",
         subtitle: listOfLinks.join(" | "),
         media: RiDashboardLine,
@@ -56,6 +58,7 @@ export default {
               type: "text",
               rows: 2,
             },
+            linkPicker
           ],
         },
       ],

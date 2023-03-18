@@ -1,7 +1,14 @@
 <div class="card-navigation-container">
   <nav class="card-navigation">
     {% for item in items %}
-      <a href="#" class="card-navigation-link">
+      {% assign url = item.link.externalUrl %}
+      {% if item.link.isInternal %}
+        {% assign url = item.link.internalUrl.slug.current %}
+      {% endif %}
+      <a
+        href="{{ url }}"
+        class="card-navigation-link"
+        {% if item.link.newTab %}target="_blank"rel="noopener"{% endif %}>
         <div class="card-navigation-link-inner">
           {% if item.icon %}
             <span class="card-navigation-link-icon" aria-hidden="true">

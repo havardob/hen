@@ -3,8 +3,8 @@
 $max-content-width: 1280px;
 
 :root {
-  --font-primary: "Satoshi", "Inter", "Hanken Grotesk", "IBM Plex Sans", "Mona Sans", sans-serif;
-  --font-secondary: "Satoshi", "IBM Plex Sans", "Fraunces", sans-serif;
+  --font-primary: "Inter", "Hanken Grotesk", "IBM Plex Sans", "Mona Sans", sans-serif;
+  --font-secondary: "Inter", "IBM Plex Sans", "Fraunces", sans-serif;
   
   // Colors 
 
@@ -32,14 +32,18 @@ $max-content-width: 1280px;
   
   --c-focus-ring: var(--c-blue-2);
 
-  --font-size-xxs: clamp(.75rem, 3vw, .875rem);
+  --font-size-xxs: clamp(.875rem, 3vw, .875rem);
   --font-size-xs: clamp(.875rem, 3vw, 1rem);
   --font-size-s: clamp(1rem, 3vw, 1.125rem);
   --font-size-m: clamp(1rem, 3vw, 1.25rem);
   --font-size-l: clamp(1.25rem, 3vw, 1.5rem);
-  --font-size-xl: clamp(1.75rem, 3vw, 2.5rem);
+  --font-size-xl: clamp(1.75rem, 3vw, 2.25rem);
+  --font-size-xxl: clamp(2rem, 3vw, 2.5rem);
 }
 
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   min-height: 100vh;
@@ -57,6 +61,7 @@ b {
 
 :is(h1,h2,h3,h4,h5,h6) {
   font-family: var(--font-secondary);
+  font-weight: 600;
 }
 
 :focus-visible {

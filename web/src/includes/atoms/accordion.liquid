@@ -1,0 +1,16 @@
+<details class="accordion">
+  <summary class="accordion-toggle">
+    <span class="accordion-toggle-icon">
+      <span class="accordion-toggle-icon-open">
+        {% include 'atoms/icon' icon: "add-circle" %}
+      </span>
+      <span class="accordion-toggle-icon-close">
+        {% include 'atoms/icon' icon: "subtract-circle" %}
+      </span>
+    </span>
+    <span>{{ title }}</span>
+  </summary>
+  <div class="accordion-content | rich-text">
+    {{ content }}
+  </div>
+</details>

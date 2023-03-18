@@ -1,0 +1,38 @@
+.input-field {
+    --c-divider: #484A52;
+    --c-input-bg: var(--c-background-tertiary);
+    display: flex;
+    flex-direction: column;
+}
+
+.input-field-label {
+    font-size: var(--c-font-s);
+    font-weight: 500;
+    color: var(--c-text-secondary);
+    line-height: 1.25;
+}
+
+.input-field-description {
+    font-size: var(--font-size-xxs);
+    margin-top: .25em;
+}
+
+.input-field-input {
+    margin-top: .75rem;
+    border-radius: .375rem;
+    padding: 1em .75em;
+    border: 1px solid var(--c-divider);
+    background-color: var(--c-input-bg);
+    color: var(--c-text-secondary);
+
+    &.textarea {
+        width: auto;
+        overflow-y: hidden;
+        min-height: calc(1.5em * 4 + 2em); // 4 rows
+        resize: vertical;
+
+        &.large {
+            min-height: calc(1.5em * 6 + 2em);
+        }
+    }
+}

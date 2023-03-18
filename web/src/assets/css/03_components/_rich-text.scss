@@ -1,0 +1,72 @@
+.rich-text {
+
+    &> :is(h1, h2, h3) {
+        color: var(--c-text-secondary);
+    }
+
+    &>*+* {
+        margin-top: 2em;
+    }
+
+    &>*+:is(h1, h2, h3) {
+        margin-top: 2em;
+    }
+
+    &> :is(h1, h2, h3)+* {
+        margin-top: .75em;
+    }
+
+    &>ul {
+        margin-left: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        
+        li {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: .75rem;
+            &:before {
+                content: "";
+                display: block;
+                height: 2px;
+                width: 1rem;
+                background-color: var(--c-blue-2);
+                margin-top: .75em;
+            }
+        }
+    }
+    
+    &>ol {
+        margin-left: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        counter-reset: counter;
+        
+        li {
+            counter-increment: counter;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: .75rem;
+            &:before {
+                content: counter(counter);
+                display: flex;
+                width: 1.5rem;
+                height: 1.5rem;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                background-color: var(--c-blue-2);
+                font-size: .75rem;
+                font-weight: 500;
+                color: var(--c-text-secondary);
+                line-height: 1;
+            }
+        }
+        
+    }
+}

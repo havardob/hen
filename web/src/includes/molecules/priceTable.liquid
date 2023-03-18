@@ -1,0 +1,33 @@
+<article class="price-table">
+  <header class="price-table-header">
+    <h2 class="price-table-title">
+      {{ title }}
+    </h2>
+    <div class="price-table-price">
+      {{ price }},-
+    </div>
+    <p class="price-table-description">
+      {{ description }}
+    </p>
+    <div class="price-table-action">
+      {% include 'atoms/buttonLink' text: actionText width: "full-width" type: "primary" %}
+    </div>
+  </header>
+  <section class="price-table-body">
+    <ul class="price-table-features">
+      {% for feature in features %}
+        <li class="price-table-feature">
+          <span class="price-table-feature-icon">
+            {% include 'atoms/icon' icon: "checkmark" %}
+          </span>
+          <span class="price-table-feature-text">
+            {{ feature }}
+          </span>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+  <footer class="price-table-footer">
+    {{ footer }}
+  </footer>
+</article>

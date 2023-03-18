@@ -11,7 +11,19 @@
     </button>
     <ul class="slideshow-list">
       <li class="slideshow-item">
-        <img src="https://s3-alpha-sig.figma.com/img/06e0/9693/f05478b7204d8a9bb45d2ae6e2419f33?Expires=1679270400&Signature=TbQaCmtnxbki6r628wn3NtX1mzCh7GlubDrwFfEMXPMQmvJtwjSmlG-8Q1BrXi22D-ItHzi-TqrTKxletgt4R7ltJ~sMl-LuTXRxR7huBnKsMLkztvGpirwMZZ9abqCWH5ZCSSKE95pgZU8vwBXCcXrJFcjawbSX6bWwT4dCzBeIF7yhoQxp8AD1x1Ou~ryrxLPScFMyuc5ddcCcdmJvcv8a2e4QZiMbvM~r1EpUYi-FCvm~MKBbeKF0CI6ahUA-0Eta1B8Rxpl6EanxOwZdYD7QzKlce7XFj-Oq3PUWsqH2cWvTrO2eON6lytP1PwdVTmXgmI8s7axA4W57yNdsEA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt="Skjermbilde av forsiden til nettsiden topsfrisor.no" />
+        <div class="slideshow-item-image">
+          {% include 'molecules/encapsulatedFigure' src: "https://s3-alpha-sig.figma.com/img/06e0/9693/f05478b7204d8a9bb45d2ae6e2419f33?Expires=1679270400&Signature=TbQaCmtnxbki6r628wn3NtX1mzCh7GlubDrwFfEMXPMQmvJtwjSmlG-8Q1BrXi22D-ItHzi-TqrTKxletgt4R7ltJ~sMl-LuTXRxR7huBnKsMLkztvGpirwMZZ9abqCWH5ZCSSKE95pgZU8vwBXCcXrJFcjawbSX6bWwT4dCzBeIF7yhoQxp8AD1x1Ou~ryrxLPScFMyuc5ddcCcdmJvcv8a2e4QZiMbvM~r1EpUYi-FCvm~MKBbeKF0CI6ahUA-0Eta1B8Rxpl6EanxOwZdYD7QzKlce7XFj-Oq3PUWsqH2cWvTrO2eON6lytP1PwdVTmXgmI8s7axA4W57yNdsEA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt: "Skjermbilde av forsiden til nettsiden topsfrisor.no" %}
+        </div>
+        <div class="slideshow-item-content-wrapper">
+          <div class="slideshow-item-content">
+
+            <h2 class="slideshow-item-title">Boken om Kleppestø IL</h2>
+            <p class="slideshow-item-description">
+              En nettside laget for å promotere utgivelsen av den lokalhistoriske boken "Kleppestø - Laget - Bygden".
+            </p>
+          </div>
+          {% include 'atoms/buttonLink' text: "Se prosjekt" icon: "eye" %}
+        </div>
       </li>
     </ul>
     <button class="slideshow-navigation | next">

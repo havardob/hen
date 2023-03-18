@@ -1,3 +1,6 @@
-<a href="{{ url }}" class="button | {{type}}">
+<a href="{{ url }}" class="button | {{type}} {{width}} {% if icon %}has-icon{% endif %}">
   <span>{{ text }}</span>
+  {% if icon %}
+    {% include "atoms/icon" icon: icon %}
+  {% endif %}
 </a>

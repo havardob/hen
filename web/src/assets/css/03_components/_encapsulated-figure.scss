@@ -1,0 +1,16 @@
+.encapsulated-figure {
+    padding: .75rem;
+    border-radius: .375rem;
+    background-color: var(--c-background-secondary);
+    border: 1px solid var(--c-divider);
+    img {
+        border-radius: .25rem; 
+        width: 100%;
+    }
+}
+
+.encapsulated-figure-caption {
+    font-size: var(--font-size-xs);
+    margin-top: .75rem;
+    margin-left: .375rem;
+}

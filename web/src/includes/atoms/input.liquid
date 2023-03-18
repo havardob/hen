@@ -1,0 +1,11 @@
+{% if type != "textarea" %}
+  <input
+    type="{{ type }}"
+    placeholder="{{placeholder}}"
+    class="input-field-input {{ type }} {{ size }}"
+    id="{{id}}" />
+{% endif %}
+
+{% if type == "textarea" %}
+  <textarea class="input-field-input {{ type }} {{ size }}" id="{{ id }}">{{ placeholder }}</textarea>
+{% endif %}

@@ -1,0 +1,28 @@
+.callout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 1.5rem;
+    border-radius: .375rem;
+    border: 1px solid var(--c-divider);
+    background-color: var(--c-background-secondary);
+    @include medium-screen {
+        padding: 3rem;
+    }
+}
+
+.callout-content {
+    max-width: 60ch;
+}
+
+.callout-title {
+    font-size: var(--font-size-l);
+    color: var(--c-text-secondary);
+}
+
+.callout-text {
+    font-size: var(--font-size-s);
+    margin-top: .75rem;
+}

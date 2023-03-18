@@ -13,7 +13,18 @@ layout: base
        cta: frontPage.cta %}
     </div>
   </section>
-
+  <div class="l-constraint">
+    {% include "atoms/divider" %}
+  </div>
+  <section class="l-section">
+    <div class="l-constraint">
+      {% include "molecules/introduction" 
+       icon: "browser"
+       title: "Du trenger som regel bare et <strong>online visittkort</strong>"
+       text: "For de flere små og mellomstore bedrifter er det en forbedring bare det å bli synlig på nett — for ofte er de ikke det i det hele tatt. Her er noen jeg har hjulpet med å forbedre sin tilstedeværelse på internett" %}
+      {% include "molecules/slideshow" %}
+    </div>
+  </section>
   <!-- Seksjoner -->
   {% for section in frontPage.sections %}
     {% if section._type == "divider" %}
@@ -40,4 +51,12 @@ layout: base
       </section>
     {% endif %}
   {% endfor %}
+  <section class="l-section">
+    <div class="l-constraint">
+      {% include 'molecules/introduction' title: "Passer for de fleste" text: "Hvis du har en liten eller en mellomstor bedrift - eller et enkelpersonforetak, så er en helt enkel nettside alt du trenger for å være synlig på nett" %}
+      <br/>
+      <br/>
+      {% include "molecules/featureCloud" %}
+    </div>
+  </section>
 </main>

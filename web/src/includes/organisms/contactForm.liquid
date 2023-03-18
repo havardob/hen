@@ -1,0 +1,18 @@
+<form action="" class="contact-form">
+  <div class="contact-form-field">
+    {% include 'molecules/inputField' label: "Ditt navn" placeholder: "Ola Nordmann" type: "text" id: "yourName" %}
+  </div>
+  <div class="contact-form-field">
+    {% include 'molecules/inputField' label: "Fortell litt om deg eller bedriften din" description: "Hvilke tjenester tilbyr du?" type: "textarea" id: "yourText" %}
+  </div>
+  <div class="contact-form-field">
+    {% include 'molecules/inputField' label: "Din melding" description: "Har du noe annet å tilføye?" type: "textarea" id: "yourMessage" %}
+  </div>
+  <div class="contact-form-footer">
+    {% include 'atoms/buttonLink' text: "Send inn" type: "primary" %}
+    <p>Skjemaet blir sendt til
+      <a href="#">kontakt@heltenklenettsider.no</a>. Hvis du heller foretrekker å snakke direkte med meg finner du
+      <a href="#">komplett kontaktinformasjon her</a>
+    </p>
+  </div>
+</form>

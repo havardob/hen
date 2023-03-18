@@ -1,0 +1,112 @@
+{% include 'head' %}
+<main class="ds">
+  <div class="ds-menu">
+    <h1 class="ds-heading ds-heading-h1">Komponenter</h1>
+    <ul id="toc" class="ds-toc"></ul>
+  </div>
+  <div class="ds-content">
+    <h2 class="ds-heading ds-heading-h2">Lenkeknapp - primær</h2>
+    <section class="ds-section">
+      {% include 'atoms/buttonLink' text: "Primær" type: "primary" %}
+    </section>
+    <h2 class="ds-heading ds-heading-h2">Lenkeknapp - Sekundær</h2>
+    <section class="ds-section">
+      {% include 'atoms/buttonLink' text: "Lenkeknapp" %}
+    </section>
+    <h2 class="ds-heading ds-heading-h2">Lenkeknapp - med ikon</h2>
+    <section class="ds-section">
+      {% include 'atoms/buttonLink' text: "En litt lengre lenke" icon: "triangle-right" %}
+    </section>
+    <h2 class="ds-heading ds-heading-h2">Introduksjons-felt</h2>
+    <section class="ds-section">
+      {% include 'molecules/introduction' title: "Tittelen til feltet" text: "En lengre tekst om hva du kan forvente deg å finne her" icon: "lightning" %}
+    </section>
+    <h2 class="ds-heading ds-heading-h2">Bilde</h2>
+    <section class="ds-section">
+      {% include 'molecules/encapsulatedFigure' src: "https://s3-alpha-sig.figma.com/img/06e0/9693/f05478b7204d8a9bb45d2ae6e2419f33?Expires=1679270400&Signature=TbQaCmtnxbki6r628wn3NtX1mzCh7GlubDrwFfEMXPMQmvJtwjSmlG-8Q1BrXi22D-ItHzi-TqrTKxletgt4R7ltJ~sMl-LuTXRxR7huBnKsMLkztvGpirwMZZ9abqCWH5ZCSSKE95pgZU8vwBXCcXrJFcjawbSX6bWwT4dCzBeIF7yhoQxp8AD1x1Ou~ryrxLPScFMyuc5ddcCcdmJvcv8a2e4QZiMbvM~r1EpUYi-FCvm~MKBbeKF0CI6ahUA-0Eta1B8Rxpl6EanxOwZdYD7QzKlce7XFj-Oq3PUWsqH2cWvTrO2eON6lytP1PwdVTmXgmI8s7axA4W57yNdsEA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" caption: "En nettside laget av meg" %}
+    </section>
+    <h2 class="ds-heading ds-heading-h2">Pristabell</h2>
+    <section class="ds-section">
+      {% assign featureList = "Èn enkelt forside | Du kan redigere tekst og bilder selv | Mulighet til å se besøksstatistikk og trafikk | Gode treff i Google-søket" | split: " | " %}
+      {% include 'molecules/priceTable' title: "Helt enkel" price: "10 000" actionText: "Se eksempler av denne typen" description: "En helt enkel nettside som bare består av én side. Ingen navigasjon, kun presentasjon av deg eller bedriften din." features: featureList footer: "... og mye mer" %}
+    </section>
+    <h2 class="ds-heading ds-heading-h2">Slideshow</h2>
+    <section class="ds-section">
+      {% include 'molecules/slideshow' %}
+    </section>
+    <h2 class="ds-heading ds-heading-h2">Feature-cloud</h2>
+    <section class="ds-section">
+      {% include 'molecules/featureCloud' %}
+    </section>
+    <h2 class="ds-heading ds-heading-h2">Accordion</h2>
+    <section class="ds-section">
+      {% include 'atoms/accordion' title: "Kan jeg betale med Vipps?" content: "<p>Ja, klart du kan. Brynjulfsen Web er et ENK, så du kan betale gebyrfritt via Vipps.</p>" %}
+    </section>
+    <h2 class="ds-heading ds-heading-h2">Accordion-list</h2>
+    <section class="ds-section">
+      {% include 'molecules/accordionList' %}
+    </section>
+    <h2 class="ds-heading ds-heading-h2">Callout</h2>
+    <section class="ds-section">
+      {% include 'molecules/callout' %}
+    </section>
+    <h2 class="ds-heading ds-heading-h2">Details-list</h2>
+    <section class="ds-section">
+      {% include 'molecules/detailsList' %}
+    </section>
+    <h2 class="ds-heading ds-heading-h2">Form elements</h2>
+    <section class="ds-section">
+      {% include 'molecules/inputField' type: "text" label: "Ditt navn" id: "input1" %}
+      <br/>
+      <br/>
+      {% include 'molecules/inputField' type: "textarea" label: "Fortell litt om deg eller bedriften din" description: "Hvilke tjenester tilbyr du?" id: "input2" %}
+      <br/>
+      <br/>
+      {% include 'molecules/inputField' type: "textarea" label: "Din melding" description: "Har du noe annet å tilføye?" id: "input3" size: "large" %}
+    </section>
+    <h2 class="ds-heading ds-heading-h2">Contact Form</h2>
+    <section class="ds-section">
+      {% include 'organisms/contactForm' %}
+    </section>
+    <h2 class="ds-heading ds-heading-h2">Rik-tekst</h2>
+    <section class="ds-section">
+      <div class="rich-text">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga voluptatem consequatur dolore, tempora ut possimus debitis tenetur ipsam impedit saepe accusamus animi quisquam dolor incidunt sunt blanditiis autem magnam omnis?</p>
+        <ul>
+          <li>Listeelement med noe tekst</li>
+          <li>Neque nulla eaque labore! Corporis nobis ipsam magni.</li>
+          <li>Noe annet</li>
+        </ul>
+        <h2>En test av heading 2</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga voluptatem consequatur dolore, tempora ut possimus debitis tenetur ipsam impedit saepe accusamus animi quisquam dolor incidunt sunt blanditiis autem magnam omnis?</p>
+        {% include 'atoms/buttonLink' text: "Mer om søkemotoroptimalisering (SEO)" icon: "triangle-right" %}
+        <ol>
+          <li>Listeelement med noe tekst</li>
+          <li>Neque nulla eaque labore! Corporis nobis ipsam magni.</li>
+          <li>Noe annet</li>
+        </ol>
+        <h3>Heading 3</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga voluptatem consequatur dolore, tempora ut possimus debitis tenetur ipsam impedit saepe accusamus animi quisquam dolor incidunt sunt blanditiis autem magnam omnis?</p>
+      </div>
+    </section>
+    <h2 class="ds-heading ds-heading-h2">Tag filter</h2>
+    <section class="ds-section">
+      {% include 'molecules/tabFilter' %}
+    </section>
+  </div>
+</main>
+<script>
+  const headings = document.querySelectorAll('.ds-heading-h2');
+  const toc = document.getElementById('toc');
+
+  headings.forEach((heading, index) => {
+    heading.setAttribute("id", index);
+    const li = document.createElement('li');
+    const link = document.createElement('a');
+    link.textContent = heading.innerText;
+    link.setAttribute('href', '#' + index);
+    li.appendChild(link);
+    toc.appendChild(li);
+  })
+</script>
+{% include 'foot' %}
